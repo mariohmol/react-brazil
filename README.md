@@ -1,6 +1,6 @@
 # react-brazil
 
-> React Brazil contains formatting, validators and mask for brazillian like apps
+> React Brazil contains formatting, validators and mask for brazillian like apps 
 
 Modules:
 
@@ -43,6 +43,9 @@ class Example extends React.Component {
       <div>
         <BrazilFormatComponent value={this.value} format={this.format}/> 
         <BrazilMaskComponent value={this.value} format={this.format}/>
+
+        <BrazilFormatComponent value="12345678900" format="cpf"/> 
+        <BrazilMaskComponent value="12345678900" format="cpf"/>
       </div>
     )
   }
@@ -54,7 +57,7 @@ class Example extends React.Component {
 Demo component files are included in Git Project.
 
 Demo Project:
-[https://github.com/mariohmol/react-brazil/tree/master/src/app/demo)
+[https://github.com/mariohmol/react-brazil/blob/master/example/)
 
 Used as reference the pipes/validators from:
 
