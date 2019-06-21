@@ -14,14 +14,6 @@ export type Props = {
 
 export default class BrazilMaskComponent extends React.Component<Props> {
 
-  // componentDidMount() {
-  //   this.makeChart();
-  // }
-  // componentDidUpdate() {
-  //   this.makeChart();
-  // }
-
-
   render() {
     const mask = MASKS[this.props.format] && MASKS[this.props.format].textMask ? MASKS[this.props.format].textMask : [];
     

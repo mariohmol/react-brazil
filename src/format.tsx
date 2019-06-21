@@ -12,14 +12,6 @@ export type Props = {
 
 export default class BrazilFormatComponent extends React.Component<Props> {
 
-  // componentDidMount() {
-  //   this.makeChart();
-  // }
-  // componentDidUpdate() {
-  //   this.makeChart();
-  // }
-
-
   render() {
     const value = maskBr[this.props.format] ? maskBr[this.props.format](this.props.value) : ''; 
 
