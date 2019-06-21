@@ -1,6 +1,6 @@
 {
-  "name": "react-jsgantt-example",
-  "homepage": "https://mariohmol.github.io/react-jsgantt",
+  "name": "react-brazil-example",
+  "homepage": "https://mariohmol.github.io/react-brazil",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-jsgantt": "file:.."
+    "react-brazil": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",

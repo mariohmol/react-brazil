@@ -1,10 +1,10 @@
 {
-  "name": "react-jsgantt",
+  "name": "react-brazil",
   "version": "2.2.0",
   "description": "React JS Gantt",
   "author": "mariohmol",
   "license": "MIT",
-  "repository": "jsGanttImproved/react-jsgantt",
+  "repository": "mariohmol/react-brazil",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -16,6 +16,7 @@
     "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
     "test:watch": "react-scripts-ts test --env=jsdom",
     "demo": "cd example && npm run start ",
+    "dev": "npm run start & npm run demo",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
@@ -24,7 +25,7 @@
     "publishnpm": "npm run build && npm publish"
   },
   "dependencies": {
-    "jsgantt-improved": "^2.2.4",
+    "js-brasil": "^1.2.3",
     "node-sass": "^4.11.0"
   },
   "peerDependencies": {
