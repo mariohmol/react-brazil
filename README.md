@@ -1,7 +1,22 @@
 # react-brazil
 
-> React Brazil
+> React Brazil contains formatting, validators and mask for brazillian like apps
 
+Modules:
+
+* CPF 
+* CNPJ
+* RG
+* Inscrição Estadual
+* Telefone e Celular
+* CEP
+* Currency (Dinheiro)
+* Time (horas e minutos)
+* Number (numero e ponto decimal)
+* Placa de Carro
+* Renavam
+* Título de Eleitor
+* Proceso Jurídico
 
 ## Install
 
@@ -13,27 +28,40 @@ npm install --save react-brazil
 
 ```tsx
 import * as React from 'react'
-
-import JSGantt from 'react-brazil'
+import {BrazilFormatComponent , BrazilMaskComponent} from 'react-brazil'
 
 class Example extends React.Component {
 
   constructor(props){
     super(props);
-    this.data = [{
-      
+    this.value = '12345678900'; 
+    this.format = 'cpf';
   }
       
-
   render () {
     return (
-       <BrazilFormatComponent />
-        <BrazilMaskComponent />
-        <BrazilValidateComponent />
+      <div>
+        <BrazilFormatComponent value={this.value} format={this.format}/> 
+        <BrazilMaskComponent value={this.value} format={this.format}/>
+      </div>
     )
   }
 }
 ```
+
+# Demo
+
+Demo component files are included in Git Project.
+
+Demo Project:
+[https://github.com/mariohmol/react-brazil/tree/master/src/app/demo)
+
+Used as reference the pipes/validators from:
+
+* https://github.com/mariohmol/js-brasil
+* https://github.com/text-mask/text-mask/tree/master/react#readme
+
+
 
 ## Developer Guide
 
@@ -51,6 +79,12 @@ to run the demo:
 *  `npm start` in the `example` folder
 the site will be at: localhost:3000
 
+
+## Todo
+
+Create the validate component
+
+`<BrazilValidateComponent />`
 
 ## License
 

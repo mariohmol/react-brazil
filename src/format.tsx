@@ -2,12 +2,12 @@
  * @class JSGanttComponent
  */
 import * as React from 'react'
-// import * as jsbrasil from 'js-brasil';
+import { maskBr } from 'js-brasil';
 import './styles.scss';
 
 export type Props = {
-  data: Array<any>,
-  options: Object
+  value: any,
+  format: string
 }
 
 export default class BrazilFormatComponent extends React.Component<Props> {
@@ -21,9 +21,11 @@ export default class BrazilFormatComponent extends React.Component<Props> {
 
 
   render() {
+    const value = maskBr[this.props.format] ? maskBr[this.props.format](this.props.value) : ''; 
+
     return (
       <React.Fragment>
-        FORMAT
+        {value}
       </React.Fragment>
     )
   }

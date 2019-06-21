@@ -7,9 +7,10 @@
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-brazil": "file:..",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-brazil": "file:.."
+    "react-text-mask": "^5.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
