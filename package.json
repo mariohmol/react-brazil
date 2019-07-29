@@ -13,7 +13,8 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
+    "test": "cross-env CI=1 npx jest --env=jsdom",
+    "test-eact": "cross-env CI=1 react-scripts-ts test --env=jsdom",
     "test:watch": "react-scripts-ts test --env=jsdom",
     "demo": "cd example && npm run start ",
     "dev": "npm run start & npm run demo",
@@ -25,6 +26,8 @@
     "publishnpm": "npm run build && npm publish"
   },
   "dependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-text-mask": "^5.4.6",
     "js-brasil": "^1.3.2",
     "node-sass": "^4.11.0",
@@ -37,13 +40,16 @@
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
-    "@types/jest": "^23.1.5",
+    "@types/jest": "^23.3.14",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "gh-pages": "^1.2.0",
+    "jest": "^24.8.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",
@@ -55,6 +61,7 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
+    "ts-jest": "^24.0.2",
     "typescript": "^2.8.3"
   },
   "files": [

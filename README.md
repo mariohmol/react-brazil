@@ -1,5 +1,7 @@
 # react-brazil
 
+[![Build Status](https://travis-ci.org/mariohmol/react-brazil.svg?branch=master)](https://travis-ci.org/mariohmol/react-brazil)
+
 > React Brazil contains formatting, validators and mask for brazillian like apps 
 
 

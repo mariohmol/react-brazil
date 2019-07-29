@@ -5,7 +5,7 @@ import * as React from 'react'
 // import * as jsbrasil from 'js-brasil';
 import './styles.scss';
 import MaskedInput from 'react-text-mask'
-import { MASKS } from 'js-brasil/src/mask';
+import { utilsBr } from 'js-brasil';
 
 export type Props = {
   value: any,
@@ -15,16 +15,23 @@ export type Props = {
 export default class BrazilMaskComponent extends React.Component<Props> {
 
   render() {
-    const mask = MASKS[this.props.format] && MASKS[this.props.format].textMask ? MASKS[this.props.format].textMask : [];
-    
+    const MASKS = utilsBr.MASKS;
+    let mask: any = [];
+    if (this.props.format && MASKS[this.props.format] && MASKS[this.props.format].textMask) {
+      mask = MASKS[this.props.format].textMask;
+    }
+    let compRender: any = '';
+    if (mask) {
+      compRender = (<MaskedInput
+        mask={mask}
+        {...this.props}
+      />);
+
+    }
     return (
       <React.Fragment>
-        { mask ? (<MaskedInput
-          mask={mask}
-          {...this.props}
-        />) : ''}
+        {compRender}
       </React.Fragment>
     )
   }
 }
-

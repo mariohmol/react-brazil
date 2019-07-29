@@ -16,8 +16,11 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop":  true,
+    "importHelpers": true,
   },
-  "include": ["src"],
+  "include": ["src", "test/test.tsx", "tests"],
   "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js"]
 }
