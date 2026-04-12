@@ -38,7 +38,7 @@ export const DATA = {
     number: '1.234,56',
     time: '06:33',
     placa: 'ADJ-5468',
-    titulo: '2053.9588.0384'
+    titulo: '2053.9588.0310'
 }
 
 // const rawIE = {};
@@ -90,7 +90,7 @@ export const DATARAW = {
     number: '1234,56',
     time: '0633',
     placa: 'ADJ5468',
-    titulo: '205395880384'
+    titulo: '205395880310'
 }
 
 
@@ -98,7 +98,7 @@ export const DATAERROR = {
     cpf: '15663188151',
     cnpj: '40841253000101',
     cep: '3123456',
-    rg: 'MG1012345',
+    rg: 'ZZ-10.123.456',
     telefone: '319999999',
     inscricaoestadual: {
         ac: '01004823001126',

@@ -2,13 +2,13 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     testMatch: ["tests/*.tsx", "**/?(*.)+(test).ts?(x)"],
-    "setupTestFrameworkScriptFile": "<rootDir>tests/setupTests.ts",
-    "roots": [
+    setupFilesAfterEnv: ["<rootDir>/tests/setupTests.ts"],
+    roots: [
         "<rootDir>/src",
         "<rootDir>/tests",
         "<rootDir>/node_modules/js-brasil"
-      ],
-    "transform": {
+    ],
+    transform: {
         "^.+\\.tsx?$": "ts-jest"
     },
     globals: {
