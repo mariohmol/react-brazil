@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-brazil/static/css/main.25f996dd.css",
+    "main.js": "/react-brazil/static/js/main.c8819b2c.js",
+    "index.html": "/react-brazil/index.html",
+    "main.25f996dd.css.map": "/react-brazil/static/css/main.25f996dd.css.map",
+    "main.c8819b2c.js.map": "/react-brazil/static/js/main.c8819b2c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25f996dd.css",
+    "static/js/main.c8819b2c.js"
+  ]
+}

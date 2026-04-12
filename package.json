@@ -21,8 +21,9 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
+    "predeploy": "node node_modules/.bin/rollup -c && cd example && npm install && npm run build",
+    "deploy": "cp -r example/build/. docs/",
+    "deploy:gh-pages": "npm run predeploy && npm run deploy",
     "deploy:demo": "node node_modules/.bin/rollup -c && cd example && npm run build && cp -r build/. /var/www/test_counbo/react-brazil/",
     "publish-npm": "npm run build && npm publish"
   },
