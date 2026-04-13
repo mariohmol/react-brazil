@@ -1,7 +1,6 @@
 # react-brazil
 
 [![CI](https://github.com/mariohmol/react-brazil/actions/workflows/ci.yml/badge.svg)](https://github.com/mariohmol/react-brazil/actions/workflows/ci.yml)
-[![Build Status](https://travis-ci.com/mariohmol/react-brazil.svg?branch=master)](https://travis-ci.com/mariohmol/react-brazil)
 
 > React Brazil contains formatting, validators and mask for brazillian like apps 
 
