@@ -1,31 +1,30 @@
-/**
- * @class JSGanttComponent
- */
 import * as React from 'react'
-// import * as jsbrasil from 'js-brasil';
+import { validateBr } from 'js-brasil';
 import './styles.scss';
 
 export type Props = {
-  data: Array<any>,
-  options: Object
+  value: any,
+  format: string,
+  state?: string,
+  children?: (isValid: boolean) => React.ReactNode
 }
 
 export default class BrazilValidateComponent extends React.Component<Props> {
-  
-  // componentDidMount() {
-  //   this.makeChart();
-  // }
-  // componentDidUpdate() {
-  //   this.makeChart();
-  // }
-
-
   render() {
-    return (
-      <React.Fragment>
-        Validate
-      </React.Fragment>
-    )
+    const { value, format, state, children } = this.props;
+    let isValid = false;
+
+    if (validateBr[format]) {
+      if (format === 'inscricaoestadual' && state) {
+        isValid = validateBr[format](value, state);
+      } else {
+        isValid = validateBr[format](value);
+      }
+    }
+
+    if (children) {
+      return <React.Fragment>{children(isValid)}</React.Fragment>;
+    }
+    return <span data-valid={isValid}>{value}</span>;
   }
 }
-
