@@ -1,11 +1,12 @@
 # react-brazil
 
-[![Build Status](https://travis-ci.org/mariohmol/react-brazil.svg?branch=master)](https://travis-ci.org/mariohmol/react-brazil)
+[![CI](https://github.com/mariohmol/react-brazil/actions/workflows/ci.yml/badge.svg)](https://github.com/mariohmol/react-brazil/actions/workflows/ci.yml)
+[![Build Status](https://travis-ci.com/mariohmol/react-brazil.svg?branch=master)](https://travis-ci.com/mariohmol/react-brazil)
 
 > React Brazil contains formatting, validators and mask for brazillian like apps 
 
 
-See the [LIVE DEMO](https://glitch.com/~boiled-continent) !
+See the [LIVE DEMO](https://mariohmol.github.io/react-brazil/) !
 
 Modules:
 
@@ -62,7 +63,7 @@ class Example extends React.Component {
 Demo component files are included in Git Project.
 
 Demo Project:
-[https://github.com/mariohmol/react-brazil/blob/master/example/)
+[https://mariohmol.github.io/react-brazil/](https://mariohmol.github.io/react-brazil/)
 
 Used as reference the pipes/validators from:
 
