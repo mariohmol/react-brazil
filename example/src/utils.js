@@ -38,7 +38,8 @@ export const DATA = {
     number: '1.234,56',
     time: '06:33',
     placa: 'ADJ-5468',
-    titulo: '2053.9588.0310'
+    titulo: '2053.9588.0310',
+    pispasep: '123.45678.91-9'
 }
 
 // const rawIE = {};
@@ -90,7 +91,8 @@ export const DATARAW = {
     number: '1234,56',
     time: '0633',
     placa: 'ADJ5468',
-    titulo: '205395880384'
+    titulo: '205395880384',
+    pispasep: '12345678919'
 }
 
 
@@ -133,7 +135,8 @@ export const DATAERROR = {
     number: '1000.10',
     time: '0633',
     placa: 'AEJ123',
-    titulo: '205395880384'
+    titulo: '205395880384',
+    pispasep: '12345678918'
 }
 
 

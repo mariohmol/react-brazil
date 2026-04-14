@@ -7,7 +7,7 @@ import {
 
 import { DATA, DATAERROR } from './utils';
 
-const FORMATS = ['cpf', 'cnpj', 'cep', 'rg', 'telefone', 'placa', 'renavam', 'titulo', 'time', 'currency']
+const FORMATS = ['cpf', 'cnpj', 'cep', 'rg', 'telefone', 'placa', 'renavam', 'titulo', 'time', 'currency', 'pispasep']
 
 const css = {
   page:  { maxWidth: 860, margin: '0 auto', padding: '24px 16px', fontFamily: 'sans-serif' },
