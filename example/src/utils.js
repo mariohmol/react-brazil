@@ -217,7 +217,7 @@ export const GENERATORS = {
         return seq + estado + dig1 + dig2;
     },
     time() {
-        return String(Math.floor(Math.random() * 24)).padStart(2, '0') +
+        return String(Math.floor(Math.random() * 24)).padStart(2, '0') + ':' +
                String(Math.floor(Math.random() * 60)).padStart(2, '0');
     },
     currency() {

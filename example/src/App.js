@@ -4,6 +4,7 @@ import {
   BrazilMaskComponent,
   BrazilValidateComponent
 } from 'react-brazil'
+import { maskBr } from 'js-brasil'
 
 import { DATA, DATAERROR, GENERATORS } from './utils';
 
@@ -52,11 +53,13 @@ const btnStyle = {
 class ValidatedRow extends Component {
   constructor(props) {
     super(props)
-    this.state = { value: props.initialValue || '' }
+    const raw = props.initialValue || ''
+    const formatted = maskBr[props.format] ? maskBr[props.format](raw) : raw
+    this.state = { value: formatted }
   }
 
   render() {
-    const { format, initialValue } = this.props
+    const { format } = this.props
     const { value } = this.state
     const empty = !value || value.replace(/[_]/g, '').replace(/[^a-zA-Z0-9]/g, '').trim() === ''
 
@@ -65,7 +68,7 @@ class ValidatedRow extends Component {
         <td style={css.td}><code>{format}</code></td>
         <td style={css.td}>
           <BrazilMaskComponent
-            defaultValue={initialValue || ''}
+            defaultValue={value}
             format={format}
             style={inputStyle}
             onChange={e => this.setState({ value: e.target.value })}
