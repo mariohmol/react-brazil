@@ -4,10 +4,11 @@ import {
   BrazilMaskComponent,
   BrazilValidateComponent
 } from 'react-brazil'
+import { maskBr } from 'js-brasil'
 
-import { DATA, DATAERROR } from './utils';
+import { DATA, DATAERROR, GENERATORS } from './utils';
 
-const FORMATS = ['cpf', 'cnpj', 'cep', 'rg', 'telefone', 'placa', 'renavam', 'titulo', 'time', 'currency']
+const FORMATS = ['cpf', 'cnpj', 'cep', 'rg', 'telefone', 'placa', 'renavam', 'titulo', 'time', 'currency', 'pispasep']
 
 const css = {
   page:  { maxWidth: 860, margin: '0 auto', padding: '24px 16px', fontFamily: 'sans-serif' },
@@ -37,16 +38,29 @@ const inputStyle = {
   fontSize: 14,
 }
 
+const btnStyle = {
+  padding: '7px 18px',
+  background: '#0969da',
+  color: '#fff',
+  border: 'none',
+  borderRadius: 6,
+  fontWeight: 600,
+  fontSize: 14,
+  cursor: 'pointer',
+}
+
+// ValidatedRow uses a key from the parent to remount with fresh initialValue on regenerate
 class ValidatedRow extends Component {
   constructor(props) {
     super(props)
-    this.state = { value: DATA[props.format] || '' }
+    const raw = props.initialValue || ''
+    const formatted = maskBr[props.format] ? maskBr[props.format](raw) : raw
+    this.state = { value: formatted }
   }
 
   render() {
     const { format } = this.props
     const { value } = this.state
-    // treat as empty when only mask placeholders remain (underscores)
     const empty = !value || value.replace(/[_]/g, '').replace(/[^a-zA-Z0-9]/g, '').trim() === ''
 
     return (
@@ -54,7 +68,7 @@ class ValidatedRow extends Component {
         <td style={css.td}><code>{format}</code></td>
         <td style={css.td}>
           <BrazilMaskComponent
-            defaultValue={DATA[format] || ''}
+            defaultValue={value}
             format={format}
             style={inputStyle}
             onChange={e => this.setState({ value: e.target.value })}
@@ -79,16 +93,36 @@ class ValidatedRow extends Component {
 }
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    const values = {}
+    FORMATS.forEach(f => { values[f] = DATA[f] || '' })
+    this.state = { epoch: 0, values }
+  }
+
+  regenerate() {
+    const values = {}
+    FORMATS.forEach(f => {
+      values[f] = GENERATORS[f] ? GENERATORS[f]() : (DATA[f] || '')
+    })
+    this.setState(s => ({ epoch: s.epoch + 1, values }))
+  }
+
   render() {
+    const { epoch, values } = this.state
     return (
       <div style={css.page}>
-        <h1>React Brazil</h1>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+          <h1 style={{ margin: 0 }}>React Brazil</h1>
+          <button style={btnStyle} onClick={() => this.regenerate()}>Regenerate</button>
+        </div>
 
         {/* ── MASK + LIVE VALIDATE ── */}
         <h2>Mask &amp; Validate</h2>
         <p style={{ color: '#555', marginBottom: 16 }}>
           Inputs use <code>BrazilMaskComponent</code> pre-filled with example values.
           Edit any field to see <code>BrazilValidateComponent</code> update in real time.
+          Click <strong>Regenerate</strong> to fill all inputs with new random valid values.
         </p>
         <table style={css.table}>
           <thead>
@@ -99,7 +133,13 @@ export default class App extends Component {
             </tr>
           </thead>
           <tbody>
-            {FORMATS.map(f => <ValidatedRow key={f} format={f} />)}
+            {FORMATS.map(f => (
+              <ValidatedRow
+                key={f + '-' + epoch}
+                format={f}
+                initialValue={values[f]}
+              />
+            ))}
           </tbody>
         </table>
 
